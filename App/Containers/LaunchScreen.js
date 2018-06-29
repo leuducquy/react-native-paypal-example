@@ -6,9 +6,22 @@ import { Images } from '../Themes'
 
 // Styles
 import styles from './Styles/LaunchScreenStyles'
+import PayPal from 'react-native-paypal-wrapper';
 
 export default class LaunchScreen extends Component {
-  render () {
+
+  componentDidMount() {
+
+    // 3 env available: NO_NETWORK, SANDBOX, PRODUCTION
+    PayPal.initialize(PayPal.SANDBOX, "Your client id");
+    PayPal.pay({
+      price: '1.1',
+      currency: 'USD',
+      description: 'Your description goes here',
+    }).then(confirm  => console.log(confirm))
+      .catch(error => console.log(error));
+  }
+  render() {
     return (
       <View style={styles.mainContainer}>
         <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
