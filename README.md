@@ -1,7 +1,7 @@
 #  PizzaApp
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 
-* This exmaple use react-native-paypal-wrapper.
+* This example use react-native-paypal-wrapper.
 
 ## :arrow_up: How to Setup
 
